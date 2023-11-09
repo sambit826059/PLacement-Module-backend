@@ -22,4 +22,10 @@ public class StudentController {
         //code
         return "Student created";
     }
+
+    @PostMapping("/{id}")
+    public String updateStudent(@PathVariable Long id, @RequestBody Student student) {
+        //code
+        return "Student updated";
+    }
 }
