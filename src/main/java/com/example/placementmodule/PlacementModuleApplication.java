@@ -1,13 +1,13 @@
-package com.example.pm;
+package com.example.placementmodule;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PmApplication {
+public class PlacementModuleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PmApplication.class, args);
+        SpringApplication.run(PlacementModuleApplication.class, args);
     }
 
 }
