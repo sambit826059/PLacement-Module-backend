@@ -14,7 +14,7 @@ public class StudentController {
     @GetMapping
     public String getStudentByID(@PathVariable Long id) {
         //code
-        return "Student details for ID: "+id;
+        return "Student details for ID: " + id;
     }
 
     @PostMapping
@@ -28,8 +28,10 @@ public class StudentController {
         //code
         return "Student updated";
     }
+
     @DeleteMapping("/{id}")
     public String deleteStudent(@PathVariable Long id) {
         //code
         return "Student deleted";
+    }
 }
