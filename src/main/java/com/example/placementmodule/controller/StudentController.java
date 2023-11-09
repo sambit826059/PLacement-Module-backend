@@ -1,8 +1,7 @@
 package com.example.placementmodule.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.placementmodule.model.Student;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class StudentController {
@@ -18,5 +17,9 @@ public class StudentController {
         return "Student details for ID: "+id;
     }
 
-
+    @PostMapping
+    public String createStudent(@RequestBody Student student) {
+        //code
+        return "Student created";
+    }
 }
