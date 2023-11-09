@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PlacementModuleApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(PlacementModuleApplication.class, args);
     }
 
