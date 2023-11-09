@@ -1,10 +1,10 @@
-package com.example.pm;
+package com.example.placementmodule;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PmApplicationTests {
+class PlacementModuleApplicationTests {
 
     @Test
     void contextLoads() {
