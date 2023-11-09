@@ -28,4 +28,8 @@ public class StudentController {
         //code
         return "Student updated";
     }
+    @DeleteMapping("/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        //code
+        return "Student deleted";
 }
