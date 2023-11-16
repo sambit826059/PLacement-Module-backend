@@ -1,19 +1,26 @@
 package com.example.placementmodule.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.math.BigInteger;
 
 @Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
     private Long id;
+    @Column(name = "registration_number",nullable = false)
     private Integer registrationNumber;
+
+    @Column(name = "first_name",nullable = false)
     private String firstName;
+    @Column(name = "middle_name")
+
     private String middleName;
+    @Column(name = "last_name",nullable = false)
     private String lastName;
+    @Column(name = "email",nullable = false)
     private String email;
 
     public Long getId() {
