@@ -1,34 +1,19 @@
+// FeedbackService.java
 package com.example.placementmodule.service;
 
 import com.example.placementmodule.model.Feedback;
-import com.example.placementmodule.repository.FeedbackRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class FeedbackService {
+public interface FeedbackService {
+    List<Feedback> getAllFeedbacks();
 
-    @Autowired
-    private FeedbackRepository feedbackRepository;
+    Optional<Feedback> getFeedbackById(Long id);
 
-    public List<Feedback> getAllFeedbacks() {
-        return feedbackRepository.findAll();
-    }
+    Feedback createFeedback(Feedback feedback);
 
-    public Optional<Feedback> getFeedbackById(Long id) {
-        return feedbackRepository.findById(id);
-    }
+    Feedback updateFeedback(Long id, Feedback updatedFeedback);
 
-    public Feedback createFeedback(Feedback feedback) {
-        return feedbackRepository.save(feedback);
-    }
-
-    public void deleteFeedback(Long id) {
-        feedbackRepository.deleteById(id);
-    }
-
-    // Add more methods as needed
+    void deleteFeedback(Long id);
 }

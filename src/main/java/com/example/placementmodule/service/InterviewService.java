@@ -1,35 +1,19 @@
+// InterviewService.java
 package com.example.placementmodule.service;
 
 import com.example.placementmodule.model.Interview;
-import com.example.placementmodule.repository.InterviewRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class InterviewService {
+public interface InterviewService {
+    List<Interview> getAllInterviews();
 
-    @Autowired
-    private InterviewRepository interviewRepository;
+    Optional<Interview> getInterviewById(Long id);
 
-    public List<Interview> getAllInterviews() {
-        return interviewRepository.findAll();
-    }
+    Interview createInterview(Interview interview);
 
-    public Optional<Interview> getInterviewById(Long id) {
-        return interviewRepository.findById(id);
-    }
+    Interview updateInterview(Long id, Interview updatedInterview);
 
-    public Interview createInterview(Interview interview) {
-        return interviewRepository.save(interview);
-    }
-
-    public void deleteInterview(Long id) {
-        interviewRepository.deleteById(id);
-    }
-
-    // Add more methods as needed
+    void deleteInterview(Long id);
 }
-
