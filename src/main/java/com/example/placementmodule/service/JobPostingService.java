@@ -1,34 +1,18 @@
 package com.example.placementmodule.service;
 
 import com.example.placementmodule.model.JobPosting;
-import com.example.placementmodule.repository.JobPostingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class JobPostingService {
+public interface JobPostingService {
+    List<JobPosting> getAllJobPostings();
 
-    @Autowired
-    private JobPostingRepository jobPostingRepository;
+    Optional<JobPosting> getJobPostingById(Long id);
 
-    public List<JobPosting> getAllJobPostings() {
-        return jobPostingRepository.findAll();
-    }
+    JobPosting createJobPosting(JobPosting jobPosting);
 
-    public Optional<JobPosting> getJobPostingById(Long id) {
-        return jobPostingRepository.findById(id);
-    }
+    JobPosting updateJobPosting(Long id, JobPosting updatedJobPosting);
 
-    public JobPosting createJobPosting(JobPosting jobPosting) {
-        return jobPostingRepository.save(jobPosting);
-    }
-
-    public void deleteJobPosting(Long id) {
-        jobPostingRepository.deleteById(id);
-    }
-
-    // Add more methods as needed
+    void deleteJobPosting(Long id);
 }

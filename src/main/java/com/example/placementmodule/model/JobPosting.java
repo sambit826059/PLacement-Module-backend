@@ -1,9 +1,6 @@
 package com.example.placementmodule.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class JobPosting {
@@ -14,6 +11,10 @@ public class JobPosting {
     private String title;
     private String description;
     private String company;
+    private String employmentType;
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company associatedCompany;
 
     public Long getId() {
         return id;
@@ -45,5 +46,16 @@ public class JobPosting {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public String getEmploymentType() {
+        return employmentType;
+    }
+
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
+    }
+
+    public void setCompanyLogoUrl(String fileName) {
     }
 }

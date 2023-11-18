@@ -1,9 +1,6 @@
 package com.example.placementmodule.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Company {
@@ -14,6 +11,9 @@ public class Company {
     private String name;
     private String industry;
     private String location;
+    @Lob
+    @Column(name = "company_picture", columnDefinition="BLOB")
+    private byte[] companyPicture;
 
     public Long getId() {
         return id;
