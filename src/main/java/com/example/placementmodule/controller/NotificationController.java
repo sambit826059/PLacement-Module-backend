@@ -16,7 +16,7 @@ public class NotificationController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<List<Notification>> getNotifications(@PathVariable Long userId) {
-        List<Notification> notifications = notificationRepository.findByUserIdAndRead(userId, false);
+        List<Notification> notifications = notificationRepository.findByUserIdAndIsRead(userId, false);
         return ResponseEntity.ok(notifications);
     }
 
