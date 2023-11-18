@@ -1,34 +1,19 @@
+// CalendarEventService.java
 package com.example.placementmodule.service;
 
 import com.example.placementmodule.model.CalendarEvent;
-import com.example.placementmodule.repository.CalendarEventRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class CalendarEventService {
+public interface CalendarEventService {
+    List<CalendarEvent> getAllCalendarEvents();
 
-    @Autowired
-    private CalendarEventRepository calendarEventRepository;
+    Optional<CalendarEvent> getCalendarEventById(Long id);
 
-    public List<CalendarEvent> getAllCalendarEvents() {
-        return calendarEventRepository.findAll();
-    }
+    CalendarEvent createCalendarEvent(CalendarEvent calendarEvent);
 
-    public Optional<CalendarEvent> getCalendarEventById(Long id) {
-        return calendarEventRepository.findById(id);
-    }
+    CalendarEvent updateCalendarEvent(Long id, CalendarEvent updatedCalendarEvent);
 
-    public CalendarEvent createCalendarEvent(CalendarEvent calendarEvent) {
-        return calendarEventRepository.save(calendarEvent);
-    }
-
-    public void deleteCalendarEvent(Long id) {
-        calendarEventRepository.deleteById(id);
-    }
-
-    // Add more methods as needed
+    void deleteCalendarEvent(Long id);
 }

@@ -1,34 +1,19 @@
+// NotificationService.java
 package com.example.placementmodule.service;
 
 import com.example.placementmodule.model.Notification;
-import com.example.placementmodule.repository.NotificationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class NotificationService {
+public interface NotificationService {
+    List<Notification> getAllNotifications();
 
-    @Autowired
-    private NotificationRepository notificationRepository;
+    Optional<Notification> getNotificationById(Long id);
 
-    public List<Notification> getAllNotifications() {
-        return notificationRepository.findAll();
-    }
+    Notification createNotification(Notification notification);
 
-    public Optional<Notification> getNotificationById(Long id) {
-        return notificationRepository.findById(id);
-    }
+    Notification updateNotification(Long id, Notification updatedNotification);
 
-    public Notification createNotification(Notification notification) {
-        return notificationRepository.save(notification);
-    }
-
-    public void deleteNotification(Long id) {
-        notificationRepository.deleteById(id);
-    }
-
-    // Add more methods as needed
+    void deleteNotification(Long id);
 }
