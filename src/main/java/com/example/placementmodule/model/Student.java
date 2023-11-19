@@ -1,5 +1,6 @@
 package com.example.placementmodule.model;
 
+
 import jakarta.persistence.*;
 
 @Entity
