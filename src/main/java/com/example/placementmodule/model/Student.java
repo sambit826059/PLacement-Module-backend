@@ -1,9 +1,12 @@
 package com.example.placementmodule.model;
 
+<<<<<<< HEAD
+import javax.persistence.*;
+=======
 
 import jakarta.persistence.*;
+>>>>>>> cce6b1bbcf797465e600c774a84218b59eb1ac21
 
-@Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

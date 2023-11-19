@@ -1,9 +1,13 @@
 package com.example.placementmodule.model;
 
+<<<<<<< HEAD
+=======
 
 import jakarta.persistence.*;
+>>>>>>> cce6b1bbcf797465e600c774a84218b59eb1ac21
 
-@Entity
+import javax.persistence.*;
+
 public class JobPosting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
