@@ -5,7 +5,6 @@ import com.example.placementmodule.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -43,6 +42,29 @@ public class StudentController {
             updatedStudent.setId(id);
             studentRepository.save(updatedStudent);
             return new ResponseEntity<>("Student updated", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<String> updateAdditionalFields(@PathVariable Long id, @RequestBody Student updatedStudent) {
+        if (studentRepository.existsById(id)) {
+            Student student = studentRepository.findById(id).orElse(null);
+
+            if (student != null) {
+                // Update the additional fields
+                student.setResume(updatedStudent.getResume());
+                student.setGithubLink(updatedStudent.getGithubLink());
+                student.setLinkedinLink(updatedStudent.getLinkedinLink());
+                student.setSkills(updatedStudent.getSkills());
+                student.setProjects(updatedStudent.getProjects());
+
+                studentRepository.save(student);
+                return new ResponseEntity<>("Additional fields updated", HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
+            }
         } else {
             return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
         }
