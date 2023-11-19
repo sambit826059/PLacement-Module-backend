@@ -1,8 +1,7 @@
 package com.example.placementmodule.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
-@Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

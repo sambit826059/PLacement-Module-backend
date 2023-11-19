@@ -1,11 +1,9 @@
 package com.example.placementmodule.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-@Entity
+import javax.persistence.*;
+
+
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
