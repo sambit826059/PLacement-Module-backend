@@ -41,7 +41,7 @@ public class StudentServiceImpl implements StudentService {
 
         if (existingStudent.isPresent()) {
             Student student = existingStudent.get();
-            // Update the fields you want to update
+
             if (updatedStudent.getRegistrationNumber() != null) {
                 student.setRegistrationNumber(updatedStudent.getRegistrationNumber());
             }
@@ -62,7 +62,11 @@ public class StudentServiceImpl implements StudentService {
                 student.setEmail(updatedStudent.getEmail());
             }
 
-            // ... update other fields as needed
+            student.setResume(updatedStudent.getResume());
+            student.setGithubLink(updatedStudent.getGithubLink());
+            student.setLinkedinLink(updatedStudent.getLinkedinLink());
+            student.setSkills(updatedStudent.getSkills());
+            student.setProjects(updatedStudent.getProjects());
 
             return studentRepository.save(student);
         } else {

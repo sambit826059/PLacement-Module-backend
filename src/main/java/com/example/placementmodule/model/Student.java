@@ -2,8 +2,6 @@ package com.example.placementmodule.model;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
-
 @Entity
 public class Student {
     @Id
@@ -16,12 +14,26 @@ public class Student {
     @Column(name = "first_name",nullable = false)
     private String firstName;
     @Column(name = "middle_name")
-
     private String middleName;
     @Column(name = "last_name",nullable = false)
     private String lastName;
+
     @Column(name = "email",nullable = false)
     private String email;
+
+    @Column(name = "resume")
+    private String resume;
+    @Column(name = "github_link")
+    private String githubLink;
+
+    @Column(name = "linkedin_link")
+    private String linkedinLink;
+
+    @Column(name = "skills")
+    private String skills;
+
+    @Column(name = "projects")
+    private String projects;
 
     public Long getId() {
         return id;
@@ -69,5 +81,45 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getResume() {
+        return resume;
+    }
+
+    public void setResume(String resume) {
+        this.resume = resume;
+    }
+
+    public String getGithubLink() {
+        return githubLink;
+    }
+
+    public void setGithubLink(String githubLink) {
+        this.githubLink = githubLink;
+    }
+
+    public String getLinkedinLink() {
+        return linkedinLink;
+    }
+
+    public void setLinkedinLink(String linkedinLink) {
+        this.linkedinLink = linkedinLink;
+    }
+
+    public String getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    public String getProjects() {
+        return projects;
+    }
+
+    public void setProjects(String projects) {
+        this.projects = projects;
     }
 }
