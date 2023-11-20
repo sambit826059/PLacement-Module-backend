@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/interview")
+@RequestMapping("/interview")
 public class InterviewController {
     @Autowired
     private InterviewRepository interviewRepository;

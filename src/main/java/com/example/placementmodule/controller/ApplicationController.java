@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/application")
+@RequestMapping("/application")
 public class ApplicationController {
     @Autowired
     private ApplicationRepository applicationRepository;

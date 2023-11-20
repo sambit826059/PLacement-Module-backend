@@ -11,9 +11,9 @@ public class Company {
     private String name;
     private String industry;
     private String location;
-    @Lob
-    @Column(name = "company_picture", columnDefinition="BLOB")
-    private byte[] companyPicture;
+//    @Lob
+//    @Column(name = "company_picture", columnDefinition="BLOB")
+//    private byte[] companyPicture;
 
     public Long getId() {
         return id;

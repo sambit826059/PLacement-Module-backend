@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/hr")
+@RequestMapping("/hr")
 public class HRController {
     @Autowired
     private HRRepository hrRepository;

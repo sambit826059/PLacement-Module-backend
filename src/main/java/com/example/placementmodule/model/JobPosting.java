@@ -12,9 +12,9 @@ public class JobPosting {
     private String description;
     private String company;
     private String employmentType;
-    @ManyToOne
-    @JoinColumn(name = "company_id")
-    private Company associatedCompany;
+//    @ManyToOne
+//    @JoinColumn(name = "company_id")
+//    private Company associatedCompany;
 
     public Long getId() {
         return id;
@@ -56,6 +56,6 @@ public class JobPosting {
         this.employmentType = employmentType;
     }
 
-    public void setCompanyLogoUrl(String fileName) {
-    }
+//    public void setCompanyLogoUrl(String fileName) {
+//    }
 }
